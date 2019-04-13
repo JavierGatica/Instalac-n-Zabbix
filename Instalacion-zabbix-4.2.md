@@ -38,4 +38,55 @@ __# vim /etc/php.ini__ = modificar archivo
      
      * #date.timezone = America/Mexico_City 
 
-__# rpm -ivh https://repo.zabbix.com/zabbix/4.2/rhel/7/x86_64/zabbix-release-4.2-1.el7.noarch.rpm__ = Agregar el repositorio de zabbix
+__# rpm -ivh https://repo.zabbix.com/zabbix/4.2/rhel/7/x86_64/zabbix-release-4.2-1.el7.noarch.rpm__ = Agragar el repositorio de zabbix
+
+__#yum install mariadb-server__ = instalar el gestor de base de datos que en esta ocasion va a ser mariadb
+     
+      * # systemctl start mariadb
+      
+      * # systemctl enable mariadb
+      
+      * # systemctl status mariadb
+      
+      * # mysql_secure_installation = paracolocar la contraseña del usuario con el que se va usar la base de datos
+      
+__# mysql -u root -p__ = para ingresar a la base de datos no va a pedir la contraseña que metimos en la seccion anterior
+
+       * #create database zabbix; 
+       
+       * # grant all privileges on zabbix.* to zabbix@'localhost' identified by 'redhat'; 
+       
+       * # grant all privileges on zabbix.* to zabbix@'%' identified by 'redhat'; 
+       
+       * # flush privileges;
+ 
+       *#Pasos para crear la base de datos#*
+       
+ __# yum install zabbix-server-mysql zabbix-proxy-mysql zabbix-web-mysql zabbix-get zabbix-agent__ = instalar zabbix
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
